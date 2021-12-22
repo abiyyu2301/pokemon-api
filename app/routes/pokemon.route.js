@@ -1,23 +1,9 @@
 const express = require('express')
-
+const pokemon = require('../controllers/pokemon.controller.js')
 const router = express.Router()
 router.use(express.json())
 
-router.get('/:limit', (req,res) => {
-    const {limit} = req.params
-    const data = [
-        {
-            'sheeesh': 'sheeesh'
-        }
-    ]
-    if (!limit) {
-        res.status(418).send({ 'message' : 'Limit is a mandatory parameter' })
-    }
-
-    // Handle database call
-
-    res.status(200).send({data})
-})
+router.get('/:limit', pokemon.getPokemons)
 
 router.post('/', (req, res) => {
     const {

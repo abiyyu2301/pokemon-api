@@ -1,8 +1,16 @@
 const express = require('express')
 const app = express()
-const pokemon =  require('./app/routes/pokemon')
+const cors = require("cors")
+
+const pokemon =  require('./app/routes/pokemon.route')
+
 const port = 3000
 
+var corsOptions = {
+  origin: `http://localhost:${port}`
+};
+
+app.use(cors(corsOptions))
 app.use('/pokemon', pokemon)
 
 app.listen(port, () => {
