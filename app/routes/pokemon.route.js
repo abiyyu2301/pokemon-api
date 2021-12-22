@@ -5,28 +5,8 @@ router.use(express.json())
 
 router.get('/:limit', pokemon.getPokemons)
 
-router.post('/', (req, res) => {
-    const {
-        id,
-        number,
-        name,
-        types
-    } = req.body
+router.post('/', pokemon.addPokemon)
 
-    // Handle database call
-
-    res.status(200).send({
-        id,
-        number,
-        name,
-        types
-    })
-})
-
-router.delete('/:id', (req, res) => {
-    const { id } = req.params
-
-    res.status(200).send({ 'message' : `Pokemon with id ${id} has been deleted`})
-})
+router.delete('/:id', pokemon.deletePokemon)
 
 module.exports = router

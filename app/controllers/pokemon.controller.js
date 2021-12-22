@@ -22,3 +22,25 @@ exports.getPokemons = (req, res) => {
         res.send(data)
     })
 }
+
+exports.addPokemon = (req, res) => {
+    const newPokemon = req.body
+
+    Pokemon.addPokemon(newPokemon, (err, data) => {
+        if (err) {
+            errorHandling(req, res, err)
+        }
+        res.send(data)
+    })
+}
+
+exports.deletePokemon = (req, res) => {
+    const { id } = req.params
+
+    Pokemon.deletePokemon(id, (err, data) => {
+        if (err) {
+            errorHandling(req, res, err)
+        }
+        res.send(data)
+    })
+}
