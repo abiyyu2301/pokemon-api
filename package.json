@@ -1,0 +1,25 @@
+{
+  "name": "pokemon-api",
+  "version": "1.0.0",
+  "description": "a simple backend practice project implementing REST methods",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abiyyu2301/pokemon-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abiyyu2301/pokemon-api/issues"
+  },
+  "homepage": "https://github.com/abiyyu2301/pokemon-api#readme",
+  "dependencies": {
+    "async": "^3.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
+  }
+}
